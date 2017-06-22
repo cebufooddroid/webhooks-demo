@@ -4,9 +4,9 @@ module AuthenticatingController
   def heroku_app
     if Rails.env.development?
       dev_app = ENV['DEVELOPMENT_APP']
-      unless dev_app
-        raise 'Set DEVLOPMENT_APP to app to check auth against in dev'
-      end
+      #unless dev_app
+      #  raise 'Set DEVLOPMENT_APP to app to check auth against in dev'
+      #end
       dev_app
     else
       match = request.host.match(/(.*)\.herokuapp\.com$/)
