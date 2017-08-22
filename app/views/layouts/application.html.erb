@@ -27,7 +27,7 @@
         <div class="spacer flex-auto"></div>
         <ul class="f4 white list pa0 ma0">
           <% if session[:name] %>
-            <li class="link mr3 dn dib-ns"><a href="/logout" class="link white"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %> <%= session[:name] %></a></li>
+            <li class="link white mr3 dn dib-ns"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %> <%= session[:name] %></li>
             <li class="link mr2 dib"><a href="/logout" class="link white">Logout</a></li>
           <% end %>
         </ul>
