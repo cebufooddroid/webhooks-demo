@@ -27,8 +27,23 @@
         <div class="spacer flex-auto"></div>
         <ul class="f4 white list pa0 ma0">
           <% if session[:name] %>
-            <li class="link white mr3 dn dib-ns"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %> <%= session[:name] %></li>
-            <li class="link mr2 dib"><a href="/logout" class="link white">Logout</a></li>
+          <li class="link white relative hide-child pointer"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %>
+            <div class="child absolute right-0 bg-white br1 bg-white shadow-outer-2 br1">
+               <div class="dib w-100 pa4 tc hover-bg-lightest-silver">
+                 <%= image_tag(@gravatar, class: "br-100 w4 h4 mb3 center") %>
+                 <div class="mb1 black">Matt Graham</div>
+                 <div class="mb1 f5 gray">matt.graham@heroku.com</div>
+               </div>
+               <div class="dib w-100 bt b--light-gray hover-bg-lightest-silver">
+                 <a href="/logout" class="dib pa2 purple link">
+                   <svg class="nudge-up--1 fill-purple h2 w2 v-mid mr1">
+                      <use xlink:href="#direction-right-28" />
+                    </svg>
+                   Sign Out
+                 </a>
+               </div>
+            </ul>
+          </li>
           <% end %>
         </ul>
       </div>
