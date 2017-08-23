@@ -3,14 +3,10 @@
   <head>
     <title>Webhooks Viewer Demo</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://www.herokucdn.com/purple3/latest/purple3.min.css">
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <%= action_cable_meta_tag %>
-
     <%= javascript_include_tag 'tabs', 'data-turbolinks-track': 'reload' %>
     <%= yield :head %>
   </head>
@@ -27,22 +23,20 @@
         <div class="spacer flex-auto"></div>
         <ul class="f4 white list pa0 ma0">
           <% if session[:name] %>
-          <li class="link white relative hide-child pointer"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %>
-            <div class="child absolute right-0 bg-white br1 bg-white shadow-outer-2 br1">
-               <div class="dib w-100 pa4 tc hover-bg-lightest-silver">
-                 <%= image_tag(@gravatar, class: "br-100 w4 h4 mb3 center") %>
-                 <div class="mb1 black">Matt Graham</div>
-                 <div class="mb1 f5 gray">matt.graham@heroku.com</div>
-               </div>
-               <div class="dib w-100 bt b--light-gray hover-bg-lightest-silver">
-                 <a href="/logout" class="dib pa2 purple link">
-                   <svg class="nudge-up--1 fill-purple h2 w2 v-mid mr1">
-                      <use xlink:href="#direction-right-28" />
-                    </svg>
-                   Sign Out
-                 </a>
-               </div>
-            </ul>
+          <li class="link white js-dropdown dropdown relative pointer"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %>
+            <div class="dropdown-content blue absolute bg-white br1 shadow-outer-2">
+              <div class="dib w-100 tc pa4 hover-bg-lightest-silver">
+                <%= image_tag(@gravatar, class: "br-100 h4 w4 mv2 mr2") %>
+                <div class="f4 black pv1"><%= session[:name] %></div>
+                <div class="f5 dark-gray mv1"><%= session[:email] %></div>
+              </div>
+              <div class="pa3 f4 bt b--light-silver link purple hover-bg-lightest-silver">
+                <svg class="nudge-up--1 fill-purple h2 w2 v-mid mr1">
+                  <use xlink:href="#direction-right-28" />
+                </svg>
+                Sign out of Heroku
+              </div>
+            </div>
           </li>
           <% end %>
         </ul>
