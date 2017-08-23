@@ -23,8 +23,7 @@
         <div class="spacer flex-auto"></div>
         <ul class="f4 white list pa0 ma0">
           <% if session[:name] %>
-          <% else %>
-          <li class="link white js-dropdown dropdown-is-open dropdown relative pointer"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %>
+          <li class="link white js-dropdown dropdown relative pointer"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %>
             <div class="dropdown-content blue absolute bg-white br1 shadow-outer-2">
               <div class="dib w-100 tc pa4 hover-bg-lightest-silver">
                 <%= image_tag(@gravatar, class: "br-100 h4 w4 mv2 mr2") %>
