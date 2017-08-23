@@ -6,7 +6,7 @@
   <div class="items-center lh-copy flex mt3">
     <%= content_tag(:div, style: ('display:none' if @no_events), id: 'events-spinner') do %>
       <div class="dib dark-gray pv4 f4">Receiving events</div>
-      <svg class="nudge-up--1 fill-purple h2 w2 v-mid mh2">
+      <svg class="nudge-up--1 fill-purple h2 w2 v-mid mh2" id="loading-future" style="visibility: hidden">
         <use xlink:href="#loading-28" />
       </svg>
     <% end %>
