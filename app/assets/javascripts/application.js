@@ -12,7 +12,7 @@ $('<div>').load('https://www.herokucdn.com/malibu/latest/sprite.svg', function()
 });
 
 $(document).on('click', '.js-dropdown', function(e) {
-  e.preventDefault();
+  // e.preventDefault();
   e.stopImmediatePropagation();
   return $(this).closest('.dropdown').toggleClass('dropdown-is-open');
 });
