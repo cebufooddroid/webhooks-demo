@@ -24,16 +24,14 @@
         <ul class="f4 white list pa0 ma0">
           <% if session[:name] %>
           <li class="link white js-dropdown dropdown relative pointer"><%= image_tag(@gravatar, class: "v-mid br-100 w3 h3 mr1") %>
-            <div class="dropdown-content blue absolute bg-white br1 shadow-outer-2">
+            <div class="dropdown-content z-999 blue absolute bg-white br1 shadow-outer-2">
               <div class="dib w-100 tc pa4 hover-bg-lightest-silver">
                 <%= image_tag(@gravatar, class: "br-100 h4 w4 mv2 mr2") %>
                 <div class="f4 black pv1"><%= session[:name] %></div>
                 <div class="f5 dark-gray mv1"><%= session[:email] %></div>
               </div>
-              <div class="tc bt b--light-silver flex flex-row pa3 items-center">
-                <a href="https://devcenter.heroku.com/articles/oauth#direct-authorization" target="_blank" class="link hover-light-purple purple f6 lh-copy mr1">What is Heroku SSO?</a>
-                <div class="mv1 flex-auto"></div>
-                <button onclick="window.location.href='/logout'" class="hk-button-sm--secondary">Sign out</button>
+              <div class="tc bt b--light-silver flex flex-column pa3 items-center">
+                <button onclick="window.location.href='/logout'" class="w-100 hk-button-sm--secondary">Sign out of Heroku</button>
               </div>
             </div>
           </li>

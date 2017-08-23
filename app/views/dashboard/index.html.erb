@@ -2,15 +2,13 @@
   <%= javascript_include_tag 'dashboard', 'data-turbolinks-track': 'reload' %>
 <% end %>
 
-<div class="db ph3 ph6-l f5 items-center">
+<div class="db ph3 ph6-l items-center">
   <div class="items-center lh-copy flex mt3">
     <%= content_tag(:div, style: ('display:none' if @no_events), id: 'events-spinner') do %>
-    <div class="dib dark-gray pv4">Receiving events</div>
-    <div class="hk-button__spinner ml2" id="loading-future" style="visibility: hidden">
-      <i class="hk-button__spinner__dot hk-button__spinner__dot--one"></i>
-      <i class="hk-button__spinner__dot hk-button__spinner__dot--two"></i>
-      <i class="hk-button__spinner__dot hk-button__spinner__dot--three"></i>
-    </div>
+      <div class="dib dark-gray pv4 f4">Receiving events</div>
+      <svg class="nudge-up--1 fill-purple h2 w2 v-mid mh2">
+        <use xlink:href="#loading-28" />
+      </svg>
     <% end %>
     <div class="flex-auto"></div>
     <button type="button" class="pulse-1 dib-ns pointer outline-transparent tc bg-blue hover-bg-light-blue white b br1 ba b--light-gray pv1 ph5 ph6-l ba b--black-20" id="loading-future-button" style="display: none">
