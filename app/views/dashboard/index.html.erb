@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="db ph3 ph6-l f5 items-center">
-  <div class="items-center lh-copy flex">
+  <div class="items-center lh-copy flex mt3">
     <%= content_tag(:div, style: ('display:none' if @no_events), id: 'events-spinner') do %>
     <div class="dib dark-gray pv4">Receiving events</div>
     <div class="hk-button__spinner ml2" id="loading-future" style="visibility: hidden">
@@ -27,7 +27,7 @@
     <div class="f5 f4-ns lh-copy dark-gray ph5 mv2">
       This application has not received any webhook events as of yet, we assume its because you've not yet setup your webhooks.
      </div>
-     <button onclick="window.location='/setup';" class="hk-button--primary bg-gradient-blue mv3">Setup Webhooks</button>
+     <%= button_to "Setup Webhooks", setup_index_path, class: "hk-button--primary bg-gradient-blue mv3", method: 'get' %>
     </div>
   <div class="w-100 mw7 lh-copy center tc br1 pa4 mv3 dark-gray">For additional details view dev center documentation on <a href="https://devcenter.heroku.com/articles/app-webhooks-tutorial" target="_blank" class="link purple">Webhooks Viewer</a></div>
 <% end %>

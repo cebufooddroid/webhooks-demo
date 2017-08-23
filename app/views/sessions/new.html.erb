@@ -69,7 +69,7 @@
         <div class="f4 lh-copy dark-gray">
           You have now configured oAuth authorization for this app.
         </div>
-        <button onclick="window.location='/';" class="hk-button--primary mv4">Login Now</button>
+        <%= button_to "Login Now", root_path, class: "hk-button--primary mv4", method: 'get' %>
       </section>
         <% end %>
   </div>
